@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*function fn(){
+			var xx=111;
+			function child(){
+				console.log(xx);
+			}
+			child();
+		}
+		fn();
+		//报错，因为外部变量不可以访问局部变量
+		console.log(xx);*/
+
+       
+
+      
+        //fnxx是外部变量，不可以访问局部变量
+        //childxx是局部变量，可以访问外部变量
+      
+		function fnxx(){
+			var x=133;
+			function childxx(){
+				//console.log(x);
+				return x; 
+			}
+			return childxx;
+		}
+		var _fn=fnxx();  //此时，_fn就是函数childxx
+		console.log(_fn);
+		//外部变量可以访问的原因是childxx函数里面有保存着访问x变量的引用
+		//这个被返回出来的childxx函数，就是“闭包”
+		var _v=_fn();
+		console.log(_v);
+	</script>
+</body>
+</html>

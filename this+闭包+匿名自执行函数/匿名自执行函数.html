@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>匿名自执行函数</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//普通的匿名函数
+		/*function(){
+			console.log("xxx");
+		}
+		//报错
+		();*/
+
+
+		//() ; //会报错
+		(1+1);   //不报错，但没有执行结果
+      
+
+      //此时，不报错，它叫匿名表达式
+		/*(
+			function(){
+			console.log("xxx");
+		  }
+		)*/
+
+
+    //可以打印出结果，这是一个匿名自执行函数,也叫IIFE
+		(
+			function(){
+			console.log("xxx");
+		  }
+		)();
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn"/>
+	<script type="text/javascript">
+		//一.this指向全局变量
+		function fn(){
+			console.log(this);
+		}
+		fn();
+		//二.this new一个对象的时候，指向这个函数
+		function fn1(){
+			console.log(this);
+		}
+		new fn1();
+		//三.this就是谁调用了这个函数，就指向谁
+		var btn=document.getElementById("btn");
+		//使用事件调用了这个函数
+		btn.onclick=function(){
+			this.setAttribute('value','124');
+		}
+	</script>
+</body>
+</html>
